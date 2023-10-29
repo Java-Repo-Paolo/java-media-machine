@@ -17,8 +17,11 @@ public class Serbatoio {
         return contenuto;
     }
 
-    public void setContenuto(int contenuto) {
-        this.contenuto = contenuto;
+    public void ricarica(int contenuto) {
+        /*if (contenuto < 0){
+
+        }*/
+        this.contenuto += contenuto;
     }
 
     @Override
