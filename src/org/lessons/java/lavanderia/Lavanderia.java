@@ -2,6 +2,7 @@ package org.lessons.java.lavanderia;
 
 import org.lessons.java.lavanderia.macchine.Asciugatrice;
 import org.lessons.java.lavanderia.macchine.Lavatrice;
+import org.lessons.java.lavanderia.macchine.Macchina;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,20 @@ public class Lavanderia {
 
     public String getLastMessage() {
         return lastMessage;
+    }
+
+    public Macchina trovaConId(int numero){
+        for (Lavatrice l : lavatrici ){
+            if (l.getNumero() == numero){
+                return l;
+            }
+        }
+        for (Asciugatrice a : asciugatrici ){
+            if (a.getNumero() == numero){
+                return a;
+            }
+        }
+        return null;
     }
 
     public void stampaTabella(){

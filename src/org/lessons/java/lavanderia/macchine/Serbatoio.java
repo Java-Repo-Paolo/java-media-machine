@@ -1,5 +1,7 @@
 package org.lessons.java.lavanderia.macchine;
 
+import org.lessons.java.lavanderia.exceptions.LavanderiaException;
+
 public class Serbatoio {
     private int capacitaMassima;
     private int contenuto;
@@ -18,9 +20,12 @@ public class Serbatoio {
     }
 
     public void ricarica(int contenuto) {
-        /*if (contenuto < 0){
-
-        }*/
+        if (contenuto + this.contenuto > capacitaMassima) {
+            throw new LavanderiaException("Stai eccedendo la capacità massima che è " + capacitaMassima);
+        }
+        if (contenuto < 0) {
+            throw new LavanderiaException("Puoi solo inserire numeri positivi");
+        }
         this.contenuto += contenuto;
     }
 

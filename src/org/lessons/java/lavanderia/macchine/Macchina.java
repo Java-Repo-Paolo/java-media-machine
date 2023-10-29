@@ -1,5 +1,7 @@
 package org.lessons.java.lavanderia.macchine;
 
+import org.lessons.java.lavanderia.exceptions.LavanderiaException;
+
 public abstract class Macchina {
     protected int numero;
     protected boolean aperta = true;
@@ -28,10 +30,6 @@ public abstract class Macchina {
         return programmaSelezionato;
     }
 
-    public boolean isInFunzione() {
-        return inFunzione;
-    }
-
     public void chiudi(){
         this.aperta  = false;
     }
@@ -55,15 +53,20 @@ public abstract class Macchina {
         this.programmaSelezionato = programmaSelezionato;
     }
 
-    public void setInFunzione(boolean inFunzione) {
-        this.inFunzione = inFunzione;
+    public boolean isInFunzione(){
+        return inFunzione;
     }
 
     public void avvia(){
         this.inFunzione = true;
     }
 
-    public void arresta(){
+    public void arresta() {
+        if (!inFunzione) {
+            throw new LavanderiaException("La macchina non è in funzione");
+        }
         this.inFunzione = false;
     }
+
+
 }
