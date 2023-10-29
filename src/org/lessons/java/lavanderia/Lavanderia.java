@@ -9,6 +9,7 @@ import java.util.List;
 public class Lavanderia {
     private List<Lavatrice> lavatrici = new ArrayList<>();
     private List<Asciugatrice> asciugatrici = new ArrayList<>();
+    private String lastMessage = "Nessuna operazione effetuata fino ad ora";
 
     public Lavanderia (int numeroLavatrici, int numeroAsciugatrici){
         for (int i = 0; i < numeroLavatrici; i++) {
@@ -17,6 +18,10 @@ public class Lavanderia {
         for (int i = 0; i < numeroAsciugatrici; i++) {
             asciugatrici.add(new Asciugatrice(i + 1 + numeroLavatrici));
         }
+    }
+
+    public String getLastMessage() {
+        return lastMessage;
     }
 
     public void stampaTabella(){
@@ -37,5 +42,27 @@ public class Lavanderia {
             );
         }
 
+    }
+    public void stampaComandi (){
+        System.out.println("\n" +
+                "== Lista comandi ==\n" +
+                "Formato della stringa del comando : comando <numero_macchina> <parametro aggiuntivo>\n"                                              +
+                "   Comando         Descrizione                                                         Parametro aggiuntivo\n"                       +
+                "   \n"                                                                                                                               +
+                "   apri            apre lo sportello                                                   -\n"                                          +
+                "   chiudi          chiude lo sportello                                                 -\n"                                          +
+                "   gettoni         inserisce il numero di gettoni nella macchina specificata           numero di gettoni positivo e maggiore di 0\n" +
+                "   lista           fornisce la lista dei programmi                                     -\n"                                          +
+                "   programma       seleziona il programma specificato sulla macchina indicata          numero del programma\n"                       +
+                "   avvia           avvia il lavaggio o l’asciugatura sulla macchina specificata        -\n"                                          +
+                "   ferma           ferma il lavaggio o l’asciugatura sulla macchina specificata        -\n"                                          +
+                "   detersivo       ricarica il detersivo sulla macchina specificata                    quantità di detersivo\n"                      +
+                "   ammorbidente    ricarica l'ammorbidente sulla macchina specificata                  quantità di ammorbidente"
+        );
+
+    }
+
+    public void setLastMessage(String lastMessage) {
+        this.lastMessage = lastMessage;
     }
 }
