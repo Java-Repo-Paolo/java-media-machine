@@ -4,7 +4,7 @@ public class ProgrammaLavatrice extends Programma{
     private int consumoDetersivo;
     private int consumoAmmorbidente;
 
-    public ProgrammaLavatrice(int numero, String nome, int durata, int gettoni) {
+    public ProgrammaLavatrice(int numero, String nome, int durata, int gettoni, int consumoDetersivo, int consumoAmmorbidente) {
         super(numero, nome, durata, gettoni);
         this.consumoDetersivo = consumoDetersivo;
         this.consumoAmmorbidente = consumoAmmorbidente;
@@ -16,5 +16,13 @@ public class ProgrammaLavatrice extends Programma{
 
     public int getConsumoAmmorbidente() {
         return consumoAmmorbidente;
+    }
+
+    @Override
+    public String toString() {
+        return "{" + super.toString() + "} ProgrammaLavatrice [" +
+                "consumoDetersivo=" + consumoDetersivo +
+                ", consumoAmmorbidente=" + consumoAmmorbidente +
+                ']';
     }
 }

@@ -28,4 +28,14 @@ public abstract class Programma {
     public int getGettoni() {
         return gettoni;
     }
+
+    @Override
+    public String toString() {
+        return "Programma[" +
+                "numero=" + numero +
+                ", nome='" + nome + '\'' +
+                ", durata=" + durata +
+                ", gettoni=" + gettoni +
+                ']';
+    }
 }
