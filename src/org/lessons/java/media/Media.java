@@ -7,7 +7,7 @@ public abstract class Media {
         if (title == null || title.isBlank()){
             throw new IllegalArgumentException("title nulla or blank");
         }
-            this.title = title;
+        this.title = title;
     }
 
     public String getTitle() {
