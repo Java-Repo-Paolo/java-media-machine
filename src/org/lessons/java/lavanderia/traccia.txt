@@ -48,10 +48,10 @@ Formato della stringa del comando : comando <numero_macchina> <parametro aggiunt
    chiudi       chiude lo sportello 															-
    gettoni      inserisce il numero di gettoni nella macchina specificata 			            numero di gettoni positivo e maggiore di 0
    lista 		fornisce la lista dei programmi 										     	-
-   programma 	seleziona il programma specificato sulla macchina indicata 		            numero del programma
+   programma 	seleziona il programma specificato sulla macchina indicata 		                numero del programma
    avvia 		avvia il lavaggio o l’asciugatura sulla macchina specificata 					-
    ferma 		ferma il lavaggio o l’asciugatura sulla macchina specificata 					-
-   detersivo 	ricarica il detersivo sulla macchina specificata                               quantità di detersivo
+   detersivo 	ricarica il detersivo sulla macchina specificata                                quantità di detersivo
    ammorbidente ricarica l'ammorbidente sulla macchina specificata                              quantità di ammorbidente
 
 Aggiungere anche un comando Esci per terminare il ciclo di esecuzione e uscire dal programma.
